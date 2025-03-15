@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+PID_FILE=/tmp/satallowance-pid
+
+usage () {
+    echo "Unknown command: $@"
+    echo "Usage: satallowance init|start|stop"
+}
+
+start () {
+    source env/bin/activate
+    touch $PID_FILE
+    python3 server.py & echo $! >> $PID_FILE
+    python3 -m http.server 8000 & echo $! >> $PID_FILE
+    python3 -m webbrowser http://localhost:8000
+    deactivate
+}
+
+stop () {
+    while read pid; do
+        kill -9 $pid
+    done <$PID_FILE
+    rm $PID_FILE
+}
+
+declare -A COMMANDS=(
+    [main]=usage
+    [start]=start
+    [stop]=stop
+)
+
+# Magic line that makes it all working
+"${COMMANDS[${1:-main}]:-${COMMANDS[main]}}" "$@"

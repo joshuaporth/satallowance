@@ -1,0 +1,81 @@
+@import url("../node_modules/toastr/build/toastr.css");
+@import url("../node_modules/inter-ui/inter.css");
+@import url("animations.css");
+
+html {
+    font-family: "Inter", "system-ui"; 
+    height: 100%;
+}
+
+body {
+    display: flex;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+}
+
+#loading {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #BBBBBB;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotation 1000ms linear infinite;
+}
+
+#tap-your-satscard {
+    color: #999999;
+    margin-left: 70px;
+    margin-top: -15px;
+
+    &:after {
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: bottom;
+        animation: ellipsis steps(4, end) 1000ms infinite;
+        content: "\2026";
+        width: 0px;
+    }
+}
+
+#bitcoin-address {
+    margin-top: -15px;
+}
+
+#sats-celebration {
+    margin-top: -35px;
+    font-size: 140px;
+    z-index: 1;
+
+    &.stack {
+        animation: bounce 1000ms;
+    }
+
+    #plus-sign {
+        color: #27AE60;
+        font-size: 160px;
+        letter-spacing: 30px;
+    }
+}
+
+.invisible {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+.fade-in {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 500ms linear;
+}
+
+.fade-out {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0ms 500ms, opacity 500ms linear;
+}

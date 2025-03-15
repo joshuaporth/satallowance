@@ -1,0 +1,31 @@
+{
+  "name": "satallowance",
+  "version": "1.0.0",
+  "description": "Help your kids Stack Sats on SATSCARDs",
+  "main": "src/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuaporth/satallowance.git"
+  },
+  "keywords": [
+    "bitcoin"
+  ],
+  "author": "Joshua Porth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshuaporth/satallowance/issues"
+  },
+  "homepage": "https://github.com/joshuaporth/satallowance#readme",
+  "devDependencies": {
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "@lottiefiles/dotlottie-web": "^0.39.0",
+    "@tsparticles/confetti": "^3.8.0",
+    "qr-code-styling": "^1.9.1",
+    "toastr": "^2.1.4",
+    "inter-ui": "^4.1.0"
+  }
+}
