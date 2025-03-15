@@ -55,11 +55,15 @@ npx webpack
 ```
 
 ### Usage
-
 ```sh
-python3 -m http.server &
-./server.py &
-# Navigate to http://localhost:8000
+# Start SatAllowance and open the web app
+satallowance start
+
+# Check is SatAllowance is running
+satallowance status
+
+# Stop SatAllowance
+satallowance stop
 ```
 
 ## 📚 Resources

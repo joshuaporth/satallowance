@@ -3,8 +3,12 @@
 PID_FILE=/tmp/satallowance-pid
 
 usage () {
+    echo "Usage: satallowance help|start|stop|status"
+}
+
+error () {
     echo "Unknown command: $@"
-    echo "Usage: satallowance init|start|stop"
+    usage
 }
 
 start () {
@@ -23,11 +27,21 @@ stop () {
     rm $PID_FILE
 }
 
+status () {
+    if [ -f $PID_FILE ]; then
+        echo "Running."
+    else
+        echo "Stopped."
+    fi
+}
+
 declare -A COMMANDS=(
-    [main]=usage
+    [error]=error
+    [help]=usage
     [start]=start
     [stop]=stop
+    [status]=status
 )
 
 # Magic line that makes it all working
-"${COMMANDS[${1:-main}]:-${COMMANDS[main]}}" "$@"
+"${COMMANDS[${1:-error}]:-${COMMANDS[error]}}" "$@"
