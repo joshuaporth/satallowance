@@ -14,9 +14,9 @@ error () {
 start () {
     source env/bin/activate
     touch $PID_FILE
-    python3 server.py & echo $! >> $PID_FILE
-    python3 -m http.server 8000 & echo $! >> $PID_FILE
-    python3 -m webbrowser http://localhost:8000
+    python3 -u server.py &> /dev/null & echo $! >> $PID_FILE
+    python3 -u -m http.server 8000 &> logs/webserver.log & echo $! >> $PID_FILE
+    python3 -u -m webbrowser http://localhost:8000 &> /dev/null
     deactivate
 }
 

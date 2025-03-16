@@ -50,20 +50,18 @@ cd satallowance
 python3 -m venv env
 source env/bin/activate
 pip3 install -r requirements.txt
-npm install
-npx webpack
 ```
 
 ### Usage
 ```sh
 # Start SatAllowance and open the web app
-satallowance start
+bin/satallowance start
 
-# Check is SatAllowance is running
-satallowance status
+# Check if SatAllowance is running
+bin/satallowance status
 
 # Stop SatAllowance
-satallowance stop
+bin/satallowance stop
 ```
 
 ## 📚 Resources

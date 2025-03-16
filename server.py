@@ -6,7 +6,7 @@ from cktap.transport import find_cards
 from websockets.asyncio.server import serve, ServerConnection
 
 logger = logging.getLogger(__name__)
-logging.basicConfig(filename="satallowance.log", level=logging.INFO)
+logging.basicConfig(filename="logs/tapserver.log", level=logging.INFO)
 
 async def server(websocket: ServerConnection):
     logger.info("Waiting for SATSCARD...")
